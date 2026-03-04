@@ -1,0 +1,142 @@
+#acc-section {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   min-height: 100vh;
+   width: 100%;
+   padding: 30px 20px;
+   box-sizing: border-box;
+}
+
+.account-modal {
+   background: #fff;
+   padding: 30px;
+   border-radius: 12px;
+   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+   width: 100%;
+   max-width: 700px;
+   min-height: 500px;
+   text-align: left;
+   box-sizing: border-box;
+   position: relative;
+}
+
+.account-modal h2 {
+   margin: 10px 0 30px;
+}
+
+.account-info p,
+.past-reports ul {
+   margin: 8px 0;
+}
+
+button#logout-btn {
+   margin-top: 20px;
+   padding: 10px 15px;
+   border: 1px solid #A8833D;
+   border-radius: 6px;
+   background-color: #C8A15A;
+   color: #fff;
+   cursor: pointer;
+   width: 200px;
+   font-size: 20px;
+}
+
+button#logout-btn:hover {
+   background-color: #8E6F35;
+}
+
+#logout-btn:active {
+   -webkit-tap-highlight-color: transparent;
+   outline: none;
+}
+
+.account-report-item {
+   display: flex;
+   align-items: center;
+   gap: 10px;
+   padding: 10px 0;
+   border-bottom: 1px solid #f0f0f0;
+   list-style: none;
+   flex-wrap: wrap;
+}
+
+.account-report-item:last-child {
+   border-bottom: none;
+}
+
+.account-report-item div {
+   flex: 1;
+   font-size: 0.9rem;
+   line-height: 1.5;
+   min-width: 120px;
+}
+
+.account-report-item small {
+   color: #888;
+}
+
+.lost-pet-remove-btn {
+   margin-top: 6px;
+   width: 100%;
+   padding: 7px 0;
+   background-color: #e8f5e9;
+   color: #2e7d32;
+   border: 1px solid #a5d6a7;
+   border-radius: 8px;
+   cursor: pointer;
+   font-size: 0.8rem;
+   font-weight: 600;
+   transition: background 0.2s;
+}
+
+.lost-pet-remove-btn:hover {
+   background-color: #c8e6c9;
+}
+
+.remove-report-btn {
+   padding: 5px 10px;
+   background-color: #e8f5e9;
+   color: #2e7d32;
+   border: 1px solid #a5d6a7;
+   border-radius: 6px;
+   cursor: pointer;
+   font-size: 0.78rem;
+   font-weight: 600;
+   white-space: nowrap;
+   transition: background 0.2s;
+}
+
+.remove-report-btn:hover {
+   background-color: #c8e6c9;
+}
+
+@media (max-width: 768px) {
+   .account-modal {
+      padding: 20px;
+      min-height: auto;
+   }
+   
+   button#logout-btn {
+      position: static;
+      width: 100%;
+      margin-top: 25px;
+      font-size: 17px;
+   }
+}
+
+@media (max-width: 480px) {
+   .account-modal h2 {
+      font-size: 1.4rem;
+   }
+   
+   .account-report-item {
+      flex-direction: column;
+      align-items: flex-start;
+   }
+   
+   .account-report-item img {
+      width: 60px !important;
+      height: 60px !important;
+   }
+}
