@@ -271,14 +271,45 @@ function initAccountPage() {
    
    const allReports = JSON.parse(localStorage.getItem("petReports")) || [];
    const userReports = allReports.filter(report => report.reportedBy === loggedInEmail);
-   const listContainer = document.querySelector(".past-reports ul");
    
-   if (userReports.length > 0) {
-      listContainer.innerHTML = userReports.map(pet => `
-         <li><strong>${pet.name}</strong> (${pet.type}) - Reported on ${pet.date}</li>
+   const lostReports = userReports.filter(r => r.category === "lost");
+   const foundReports = userReports.filter(r => r.category === "found");
+   
+   const lostList = document.getElementById("lost-reports-list");
+   const foundList = document.getElementById("found-reports-list");
+   
+   function renderReportList(reports, listEl) {
+      if (!listEl) return;
+      if (reports.length === 0) {
+         listEl.innerHTML = "<li>No reports yet.</li>";
+         return;
+      }
+      listEl.innerHTML = reports.map(pet => `
+         <li class="account-report-item">
+            <div class="account-report-info">
+               <strong>${pet.name}</strong> (${pet.type}) — ${pet.date}
+            </div>
+            <button class="reunited-btn" data-pet-id="${pet.id}" data-pet-category="${pet.category}">
+               <span>
+                  🎉 Mark as Reunited
+               </span>
+            </button>
+         </li>
       `).join("");
+      
+      listEl.querySelectorAll(".reunited-btn").forEach(btn => {
+         btn.addEventListener("click", () => {
+            const petId = btn.dataset.petId;
+            const category = btn.dataset.petCategory;
+            removePetReport(petId, category);
+         });
+      });
    }
+   
+   renderReportList(lostReports, lostList);
+   renderReportList(foundReports, foundList);
 }
+
 
 function capitalizeFirst(str) {
    if (!str) return "";
@@ -289,4 +320,4 @@ function formatDate(dateStr) {
    if (!dateStr) return "";
    const [year, month, day] = dateStr.split("-");
    return `${day}-${month}-${year}`;
-}
+         }
