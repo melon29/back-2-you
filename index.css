@@ -37,7 +37,6 @@ header {
 #logo {
    height: 100%;
    width: auto;
-   cursor: pointer;
 }
 
 #menuNavul {
@@ -187,6 +186,11 @@ header {
    padding: 5px;
 }
 
+#hamburger:active {
+   -webkit-tap-highlight-color: transparent;
+   outline: none;
+}
+
 #hamburger span {
    width: 25px;
    height: 3px;
@@ -238,7 +242,6 @@ header {
       background: rgba(138, 154, 142, 0.97);
       backdrop-filter: blur(10px);
       z-index: 1000;
-      padding: 10px 0;
    }
    
    #menuNav.open {
@@ -296,4 +299,4 @@ header {
       font-size: 12px;
       padding: 5px 8px;
    }
-}
+      }
