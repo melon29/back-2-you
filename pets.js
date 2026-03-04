@@ -1,3 +1,6 @@
+const lostPets = [];
+const foundPets = [];
+/*
 const lostPets = [
     { id: "lost_demo_1", category: "lost", name: "Tommy", gender: "Male", type: "Dog", breed: "Belgian Malinois", location: "Kurla, Mumbai", date: "21-01-2026", time: "4:30 PM", lastSeenLandmark: "Near Kurla Station", description: "Very friendly, responds to his name. Wearing a red collar with a tag.", image: "/images/dog1.jpeg", reportedBy: "demo@back2you.com" },
     { id: "lost_demo_2", category: "lost", name: "Bruno", gender: "Male", type: "Dog", breed: "German Shepherd", location: "Andheri West, Mumbai", date: "19-01-2026", time: "7:00 PM", lastSeenLandmark: "Near Infinity Mall", description: "Large build, trained dog. May appear aggressive but is gentle with familiar people.", image: "/images/dog2.jpg", reportedBy: "demo@back2you.com" },
@@ -34,7 +37,7 @@ const foundPets = [
     { id: "found_demo_14", category: "found", name: "Unknown", gender: "Male", type: "Cat", breed: "Russian Blue Mix", location: "Chembur, Mumbai", date: "01-02-2026", time: "9:00 PM", lastSeenLandmark: "Near Diamond Garden", description: "Grey-blue cat with green eyes found in the garden. Neutered, very well-behaved.", image: "/images/cat9.jpg", reportedBy: "demo@back2you.com" },
     { id: "found_demo_15", category: "found", name: "Unknown", gender: "Male", type: "Dog", breed: "Shih Tzu", location: "Worli, Mumbai", date: "02-02-2026", time: "12:00 PM", lastSeenLandmark: "Near Worli Sea Face", description: "Small white Shih Tzu found near the seaface. Groomed recently, wearing a tiny red bow.", image: "/images/dog13.jpg", reportedBy: "demo@back2you.com" },
     { id: "found_demo_16", category: "found", name: "Sunny", gender: "Male", type: "Bird", breed: "Canary", location: "Santacruz West, Mumbai", date: "03-02-2026", time: "7:00 AM", lastSeenLandmark: "Near Santacruz Market", description: "Bright yellow canary found in a courtyard. In good health, sings beautifully.", image: "/images/bird5.jpg", reportedBy: "demo@back2you.com" },
-];
+];*/
 
 function getUserReports() {
     return JSON.parse(localStorage.getItem("petReports")) || [];
